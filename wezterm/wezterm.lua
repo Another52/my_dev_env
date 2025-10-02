@@ -31,7 +31,7 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     config.default_cwd = "D:/Code"
     config.default_prog = {
         'cmd.exe', '/k',
-        'C:/msys64/msys2_shell.cmd -defterm -here -no-start -clang64 -shell bash'
+        'C:/msys64/msys2_shell.cmd -defterm -here -no-start -clang64 -shell zsh'
     }
 end
 
