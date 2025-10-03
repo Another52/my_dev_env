@@ -24,5 +24,19 @@ let &t_EI = "\<Esc>[2 q"
 set ttimeout
 set ttimeoutlen=10
 set ttyfast
-
 " ---------------------------------------------------------
+
+" ------------------vim-plug stuff-------------------------
+call plug#begin('~/.local/share/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'tribela/vim-transparent'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+" ---------------------------------------------------------
+
+" ------------------Theme/Colors---------------------------
+set termguicolors
+colorscheme embark
