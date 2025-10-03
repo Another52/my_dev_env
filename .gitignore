@@ -2,3 +2,5 @@ nvim/lazy-lock.json
 
 /zsh/*
 !.zshrc
+
+.netrwhist
