@@ -1,0 +1,14 @@
+set nocompatible        " no VI compatibility
+
+set relativenumber      " sets the line number
+
+set wrap                " sets wrap
+
+set encoding=utf-8      " encoding
+
+set laststatus=2        " statusbar
+
+set tabstop=4
+set expandtab           " convert tabs to spaces
+
+set t_Co=256
