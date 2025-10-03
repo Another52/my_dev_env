@@ -20,4 +20,9 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 " Block in other modes
 let &t_EI = "\<Esc>[2 q"
+" fix lag with changing modes
+set ttimeout
+set ttimeoutlen=10
+set ttyfast
+
 " ---------------------------------------------------------
