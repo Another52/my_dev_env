@@ -12,7 +12,7 @@ config.keys = {
 }
 
 -- window decor
-config.color_scheme = 'Afterglow'
+config.color_scheme = 'Atom'
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.window_background_opacity = 0.7
 
