@@ -9,14 +9,21 @@ return{
         "mason-org/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = {"emmylua_ls", "clangd", "neocmake", "jsonls"}
+                ensure_installed = {"emmylua_ls", "neocmake", "jsonls"}
             })
         end
     },
     {
         "neovim/nvim-lspconfig",
         dependencies = { 'saghen/blink.cmp' },
-        config = function()
+        opts = {
+            servers = {
+                clangd = {
+                    mason = false,
+                }
+            }
+        },
+        config = function(_, opts)
             local capabilities = require('blink.cmp').get_lsp_capabilities()
 
             --lua
