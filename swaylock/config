@@ -2,7 +2,7 @@ ignore-empty-password
 indicator
 clock
 #timestr=%H:%M
-image=~/Pictures/wallpapers/wallhaven-zpgr2y_1920x1080.png
+image=~/Pictures/lockscreen/wallhaven-zpgr2y_1920x1080.png
 fade-in=0.6
  
 # Base background and layout
