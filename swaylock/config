@@ -1,0 +1,50 @@
+ignore-empty-password
+indicator
+clock
+#timestr=%H:%M
+image=~/Pictures/wallpapers/wallhaven-zpgr2y_1920x1080.png
+fade-in=0.6
+ 
+# Base background and layout
+color=00000000
+layout-bg-color=00000000
+layout-border-color=00000000
+layout-text-color=b463f6
+ 
+# Ring and indicator
+ring-color=8839ef
+ring-clear-color=ea76cb
+ring-caps-lock-color=d20f39
+ring-ver-color=9a348e
+ring-wrong-color=c01053
+indicator-radius=100
+indicator-thickness=7
+ 
+# Inside (fully transparent)
+inside-color=00000000
+inside-clear-color=00000000
+inside-caps-lock-color=00000000
+inside-ver-color=00000000
+inside-wrong-color=00000000
+ 
+# Line (fully transparent)
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+ 
+# Key highlights
+key-hl-color=ea76cb
+caps-lock-key-hl-color=d20f39
+bs-hl-color=c01053
+caps-lock-bs-hl-color=c01053
+separator-color=00000000
+ 
+# Text
+text-color=b463f6
+text-clear-color=ea76cb
+text-caps-lock-color=d20f39
+text-ver-color=9a348e
+text-wrong-color=c01053
+ 
