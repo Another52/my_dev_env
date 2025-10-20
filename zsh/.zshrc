@@ -20,6 +20,8 @@ zinit light zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#525252'
 
 #aliases
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 alias lsa='ls -a'
 
 #keybinds
