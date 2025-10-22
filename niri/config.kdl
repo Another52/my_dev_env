@@ -111,8 +111,9 @@ input {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 5
 
+    background-color "transparent"
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
     //   or right edge of the screen.
@@ -310,7 +311,7 @@ animations {
 
 // My window rules
 window-rule {
-        draw-border-with-background false
+    draw-border-with-background false
 }
 
 // Work around WezTerm's initial configure bug
