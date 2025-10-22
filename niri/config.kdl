@@ -323,9 +323,14 @@ animations {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
-// My window rules
+// My custom window rules
 window-rule {
     draw-border-with-background false
+}
+
+window-rule {
+    match app-id="blender"
+    open-maximized true
 }
 
 // Work around WezTerm's initial configure bug
