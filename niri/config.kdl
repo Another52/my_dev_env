@@ -108,9 +108,6 @@ output "eDP-1" {
 
 // no shadows in overview
 overview {
-    workspace-shadow {
-        off
-    }
 }
 
 // layer rules for background
