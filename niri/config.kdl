@@ -376,6 +376,8 @@ window-rule {
 }
 
 binds {
+    // Custom Binds
+    Mod+B   {spawn-sh "pkill -USR1 waybar"; }
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
     // like wev.
