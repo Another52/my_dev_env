@@ -325,6 +325,13 @@ window-rule {
     draw-border-with-background false
 }
 
+// opacity
+window-rule {
+    match app-id="firefox"
+    //opacity 0.95
+}
+
+//blender 
 window-rule {
     match app-id="blender"
     open-maximized true
