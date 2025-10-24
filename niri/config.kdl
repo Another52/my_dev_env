@@ -121,7 +121,7 @@ layer-rule {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 5
+    gaps 1
 
     background-color "transparent"
     // When to center a column when changing focus, options are:
