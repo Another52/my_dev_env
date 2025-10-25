@@ -1,5 +1,6 @@
 -- variables
-local opacity = 0.7
+local opacity = 0.2
+local incDelta = 0.2
 --
 
 local wezterm = require 'wezterm'
@@ -8,10 +9,15 @@ local config = wezterm.config_builder()
 -- shortcut keys
 config.keys = {
     {
-        key = "O",
-        mods = "CTRL|SHIFT",
-        action = wezterm.action.EmitEvent("toggle-opacity"),
+        key = "UpArrow",
+        mods = "SHIFT",
+        action = wezterm.action.EmitEvent("inc-opacity"),
     },
+    {
+        key = "DownArrow",
+        mods = "SHIFT",
+        action = wezterm.action.EmitEvent("dec-opacity"),
+    }
 }
 
 -- window decor
@@ -24,14 +30,22 @@ config.window_frame = {
     active_titlebar_bg = string.format("rgba(0 0 0 %f)", opacity),
     inactive_titlebar_bg = string.format("rgba(0 0 0 %f)", opacity),
 }
+ 
 
-wezterm.on("toggle-opacity", function(window, pane)
+-- Functions
+wezterm.on("inc-opacity", function(window, pane)
+    opacity = math.max(0.0, opacity - incDelta)
+
     local overrides = window:get_config_overrides() or {}
-    if not overrides.window_background_opacity then
-        overrides.window_background_opacity = 0.97
-    else
-        overrides.window_background_opacity = nil
-    end
+        overrides.window_background_opacity = opacity
+    window:set_config_overrides(overrides)
+end)
+
+wezterm.on("dec-opacity", function(window, pane)
+    opacity = math.min(1.0, opacity + incDelta)
+
+    local overrides = window:get_config_overrides() or {}
+        overrides.window_background_opacity = opacity
     window:set_config_overrides(overrides)
 end)
 
