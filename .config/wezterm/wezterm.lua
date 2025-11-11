@@ -1,5 +1,5 @@
 -- variables
-local opacity = 0.2
+local opacity = 0.4
 local incDelta = 0.2
 --
 
@@ -33,7 +33,19 @@ config.window_frame = {
  
 
 -- Functions
+function setOpacityDelta()
+    if (opacity > 0.9) then
+        incDelta = 0.03
+    elseif (opacity > 0.7) then
+        incDelta = 0.05
+    elseif (opacity > 0.5) then
+        incDelta = 0.08
+    else
+        incDelta = 0.2
+    end
+end
 wezterm.on("inc-opacity", function(window, pane)
+    setOpacityDelta()
     opacity = math.max(0.0, opacity - incDelta)
 
     local overrides = window:get_config_overrides() or {}
@@ -42,6 +54,7 @@ wezterm.on("inc-opacity", function(window, pane)
 end)
 
 wezterm.on("dec-opacity", function(window, pane)
+    setOpacityDelta()
     opacity = math.min(1.0, opacity + incDelta)
 
     local overrides = window:get_config_overrides() or {}

@@ -335,6 +335,8 @@ window-rule {
 window-rule {
     match app-id="blender"
     open-maximized true
+    match app-id="blender" title="Prefernences"
+    open-floating true
 }
 
 // Work around WezTerm's initial configure bug
