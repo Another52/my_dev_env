@@ -1,6 +1,8 @@
-nvim/lazy-lock.json
+lazy-lock.json
 
 /zsh/*
 !.zshrc
 
 .netrwhist
+
+*.bck
