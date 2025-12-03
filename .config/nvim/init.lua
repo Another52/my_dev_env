@@ -27,3 +27,5 @@ vim.opt.incsearch = true                        -- Show matches as you type
 require("config.lazy")
 
 require('transparent').clear_prefix('NeoTree')
+
+vim.cmd.colorscheme "retrobox"
