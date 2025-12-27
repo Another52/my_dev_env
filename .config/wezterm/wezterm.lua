@@ -65,6 +65,7 @@ end)
 -- Linux: launch ZSH
 if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
     config.default_prog = { 'zsh' }
+    config.window_decorations = "NONE"
 end
 
 -- Windows: launch MSYS2 Clang64 via cmd.exe
