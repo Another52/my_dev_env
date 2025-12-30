@@ -9,7 +9,7 @@ return{
         "mason-org/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = {"emmylua_ls", "neocmake", "jsonls"}
+                ensure_installed = {"emmylua_ls", "neocmake", "qmlls", "jsonls"}
             })
         end
     },
@@ -26,6 +26,9 @@ return{
         config = function(_, opts)
             local capabilities = require('blink.cmp').get_lsp_capabilities()
 
+            --qmlls
+            vim.lsp.config("qmlls", { capabilities = capabilities })
+            vim.lsp.enable("qmlls")
             --lua
             vim.lsp.config("emmylua_ls", { capabilities = capabilities })
             vim.lsp.enable("emmylua_ls")
