@@ -1,4 +1,4 @@
-return{
+return {
     {
         "mason-org/mason.nvim",
         config = function()
@@ -9,7 +9,7 @@ return{
         "mason-org/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = {"emmylua_ls", "neocmake", "qmlls", "jsonls"}
+                ensure_installed = { "emmylua_ls", "neocmake", "qmlls", "jsonls", "mesonlsp", "html", "cssls", "biome"}
             })
         end
     },
@@ -26,6 +26,18 @@ return{
         config = function(_, opts)
             local capabilities = require('blink.cmp').get_lsp_capabilities()
 
+            --biome
+            vim.lsp.config("biome", { capabilities = capabilities })
+            vim.lsp.enable("biome")
+            --html
+            vim.lsp.config("html", { capabilities = capabilities })
+            vim.lsp.enable("html")
+            --cssls
+            vim.lsp.config("cssls", { capabilities = capabilities })
+            vim.lsp.enable("cssls")
+            --mesonlsp
+            vim.lsp.config("mesonlsp", { capabilities = capabilities })
+            vim.lsp.enable("mesonlsp")
             --qmlls
             vim.lsp.config("qmlls", { capabilities = capabilities })
             vim.lsp.enable("qmlls")
@@ -46,7 +58,8 @@ return{
                         schemas = {
                             {
                                 fileMatch = { "CMakePresets.json", "cmakePresets.json" },
-                                url = "https://raw.githubusercontent.com/Kitware/CMake/master/Help/manual/presets/schema.json"
+                                url =
+                                "https://raw.githubusercontent.com/Kitware/CMake/master/Help/manual/presets/schema.json"
                             }
                         },
                         validate = { enable = true },
@@ -54,7 +67,7 @@ return{
                 }
             })
             vim.lsp.enable("jsonls")
- 
+
             --stuff
             vim.diagnostic.config({
                 virtual_text = { spacing = 4, prefix = "●" },
