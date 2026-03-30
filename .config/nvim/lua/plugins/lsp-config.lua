@@ -9,7 +9,7 @@ return {
         "mason-org/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "emmylua_ls", "neocmake", "qmlls", "jsonls", "mesonlsp", "html", "cssls", "biome"}
+                ensure_installed = { "emmylua_ls", "neocmake", "qmlls", "jsonls", "mesonlsp", "html", "cssls", "biome", "tinymist" }
             })
         end
     },
@@ -26,6 +26,23 @@ return {
         config = function(_, opts)
             local capabilities = require('blink.cmp').get_lsp_capabilities()
 
+            --tinymist
+            vim.lsp.config("tinymist", {
+                capabilities = capabilities,
+
+                settings = {
+
+                    exportPdf = "onType",
+                    semanticTokens = "disable",
+
+                    formatterMode = "typstyle",
+                    formatterProseWrap = true, -- wrap lines in content mode
+                    formatterPrintWidth = 80, -- limit line length to 80 if possible
+                    formatterIndentSize = 4, -- indentation width
+
+                }
+            })
+            vim.lsp.enable("tinymist")
             --biome
             vim.lsp.config("biome", { capabilities = capabilities })
             vim.lsp.enable("biome")
