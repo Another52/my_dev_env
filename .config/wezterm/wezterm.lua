@@ -1,5 +1,5 @@
 -- variables
-local opacity = 0.4
+local opacity = 0.8
 local incDelta = 0.2
 --
 
