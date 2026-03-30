@@ -7,8 +7,15 @@ return {
 
     opts = {
         preview = {
-            filetypes = { "markdown", "html", "latex", "markdown-inline",
-                "yaml" }
+            enable = false
+        }
+    },
+
+    keys = {
+        {
+            "<leader>m",
+            "<cmd>Markview<CR>",
+            desc = "Toggles 'markview' previews globally"
         }
     }
 };
